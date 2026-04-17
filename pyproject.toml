@@ -11,15 +11,17 @@ license = { file = "LICENSE" }
 dynamic = ["version"]
 dependencies = []
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+[dependency-groups]
+build = [
+	"grpcio-tools==1.76.0",
+]
 
 [tool.pdm.version]
 source = "scm"
 
 [tool.pdm.build]
 package-dir = "src"
+includes = ["src/test_lib"]
 excludes = ["**/.pytest_cache"]
 
 [tool.pytest.ini_options]

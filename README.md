@@ -24,4 +24,4 @@ The workflow:
 
 Local development stays on `uv`; CI release publishing uses `pip`.
 
-The workflow currently targets the `hl-sdk-py-lin-md` runner label, matching the Python SDK workflow it was modeled after.
+The workflow runs on GitHub-hosted `ubuntu-latest` runners.
