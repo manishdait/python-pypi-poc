@@ -1,7 +1,23 @@
 [project]
 name = "python-pypi-poc"
-version = "0.1.0"
-description = "Add your description here"
+description = "A test poc lib"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dynamic = ["version"]
 dependencies = []
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.pdm.build]
+package-dir = "src"
+excludes = ["**/.pytest_cache"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
