@@ -1,7 +1,20 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
 [project]
 name = "python-pypi-poc"
 version = "0.1.0"
-description = "Add your description here"
+description = "Proof of concept package for a signed PyPI publish workflow"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
+
+[dependency-groups]
+build = [
+	"grpcio-tools==1.76.0",
+]
+
+[tool.pdm.build]
+package-dir = "src"
+includes = ["src/test_lib"]
